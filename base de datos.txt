@@ -1,0 +1,69 @@
+drop database if exists MiTienda;
+create database if not exists MiTienda;
+use MiTienda;
+
+create table CategoriaM(
+	idCategoriaM int auto_increment primary key not null,
+    nombre varchar(50) not null,
+    descripcion varchar(200) not null
+);
+
+create table CategoriaH(
+	idCategoriaH int auto_increment primary key not null,
+    nombre varchar(50) not null,
+    descripcion varchar(200) not null
+);
+
+
+create table Productos(
+	idProducto int auto_increment primary key not null,
+    Nombre varchar(50) not null,
+    Existencias int not null,
+    Precio double(10,2) not null,
+    NivelMaximo int not null,
+    idCategoriaM int not null,
+    idCategoriaH int not null,
+    constraint foreign key (idCategoriaM) references CategoriaM(idCategoriaM),
+    constraint foreign key (idCategoriaH) references CategoriaH(idCategoriaH)
+);
+
+
+
+create table Usuarios(
+	id int auto_increment primary key not null,
+    usuario varchar(50) not null,
+    contrasena varchar(30) not null,
+    rol varchar(50) not null
+);
+
+create table Ventas(
+	idVenta int auto_increment primary key not null,
+    Fecha Date not null,
+    preventa double(10,2) not null,
+    idUsuario int not null,
+    constraint foreign key (idUsuario) references Usuarios(id)
+);
+
+create table Clientes(
+	idCliente int auto_increment primary key not null,
+    Nombre varchar(50) not null,
+    ApellidoP varchar (50) not null,
+    ApellidoM varchar (50) not null,
+    Correo varchar (50) not null,
+    Contrasena varchar (20) not null
+);
+
+select* from usuarios;
+
+create table DetallesVenta(
+	idDetallesVenta int auto_increment primary key not null,
+    idProducto int not null,
+    idVenta int not null,
+    idCliente int not null,
+    Unidades int not null,
+    Precio double(10,2) not null,
+    constraint foreign key (idProducto) references Productos(idProducto),
+    constraint foreign key (idVenta) references Ventas(idVenta),
+    constraint foreign key (idCliente) references Clientes(idCliente)
+);
+
