@@ -19,7 +19,7 @@
             <label class="icon-menu" for="menu-bar"></label>
             <nav class="menu">
                 <a href="<?php echo RUTA.'close.php'?>">Cerrar Sesion</a>
-                <a href="#">Productos</a>
+                <a href="#">Categorias</a>
                 <a href="">Electronicos</a>
                 <a href="">Contacto</a>
             </nav>

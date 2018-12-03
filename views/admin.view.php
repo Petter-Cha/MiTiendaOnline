@@ -19,7 +19,7 @@
             <label class="icon-menu" for="menu-bar"></label>
             <nav class="menu">
                 <a href="<?php echo RUTA.'close.php'?>">Cerrar Sesion</a>
-                <a href="">Administrar Categorias</a>
+                <a href="<?php echo RUTA.'categoriasA.php'?>">Administrar Categorias</a>
                 <a href="#">Principal</a>
                 <a href="">Electronicos</a>
                 <a href="">Contacto</a>
@@ -43,22 +43,26 @@
             </section>
             <section id="Categorias">
                 
-                <div class=contenedor>
+            <div class=contenedor>
                     <article>
                         <a href="">
-                            <h4>Mixtos</h4>
+                            <img src="img/tele.jpg">
                         </a>
+                        <h4>Mixtos</h4>
                     </article>
                     <article>
                         <a href="">
-                            <h4>Hombres</h4>
+                            <img src="img/men.jpg">
                         </a>
+                        <h4>Hombres</h4>
                     </article>
                     <article>
                         <a href="">
-                            <h4>Mujeres</h4>
+                            <img src="img/wom.png">
                         </a>
+                        <h4>Mujeres</h4>
                     </article>
+
                     </div>
             </section>
             <section id="info">
